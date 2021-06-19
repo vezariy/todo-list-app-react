@@ -3,22 +3,24 @@ import './App.css';
 // Components
 import Form from './components/Form';
 import TodoList from './components/TodoList';
-
+// import Todo from './components/Todo';
 
 function App() {
   const [inputText, setInputText] = useState('');
-  const [todos, setTodos] = ([]);
+  const [todos, setTodos] = useState([]);
   return (
     <div className="App">
       <header>
-        <h1>Ed's Todo List</h1>
+        <h1>Todo List</h1>
       </header>
       <Form 
       inputText = {inputText}
       todos={todos} 
       setTodos={setTodos} 
-      setInputText = {setInputText}/>
-      <TodoList/>
+      setInputText = {setInputText}
+      />
+      
+      <TodoList setTodos={setTodos} todos={todos}/>
     </div>
   );
 }
