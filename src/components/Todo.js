@@ -1,10 +1,11 @@
 import React from "react";
 
 const Todo = ({text, todo, todos, setTodos}) => {
-    
+    // Delete btn
     const deleteHandler  = () => {
-        setTodos(todos.filter((elD) => elD.id !== todo.id))
+        setTodos(todos.filter((elDel) => elDel.id !== todo.id))
     };
+    // Complete btn
     const completeHandler = () => {
         setTodos(todos.map((elCom) => {
             if (elCom.id === todo.id) { 
@@ -16,7 +17,6 @@ const Todo = ({text, todo, todos, setTodos}) => {
         }
         ) )
     }
-    
     return (
         <div className="todo">
             <li className={`todo-item ${todo.completed ? "completed": ""}`}> {text}</li>
